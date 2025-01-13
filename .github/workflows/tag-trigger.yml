@@ -1,0 +1,16 @@
+name: Build on Tag
+
+on:
+  push:
+    tags:
+      - 'v1.0*'  # Déclenche la pipeline uniquement pour des tags qui commencent par "v"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build project
+        run: echo "Building project for tag ${{ github.ref_name }}"
