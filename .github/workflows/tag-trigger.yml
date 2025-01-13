@@ -3,7 +3,7 @@ name: Build on Tag
 on:
   push:
     tags:
-      - 'v1.0*'  # Déclenche la pipeline uniquement pour des tags qui commencent par "v"
+        - 'v1.[0-9]'  # Accepte v1.0, v1.1, v1.2, jusqu'à v1.9
 
 jobs:
   build:
